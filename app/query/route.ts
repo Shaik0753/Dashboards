@@ -2,7 +2,7 @@ import { db } from "@vercel/postgres";
 
 const client = await db.connect();
 
-export async function listInvoices() {
+async function listInvoices() {
 	const data = await client.sql`
     SELECT invoices.amount, customers.name
     FROM invoices
